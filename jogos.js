@@ -5,7 +5,7 @@ const gameList = [
         price: 299.00,
         type: "game",
         console: "Multiplataforma",
-        img: "🎯"
+        img: "./assets/imgGames/EA-FC25.webp"
     },
     {
         emprise: "Guerrilla Games",
@@ -13,7 +13,8 @@ const gameList = [
         price: 75.00,
         type: "game",
         console: "PlayStation",
-        img: "🎯"
+        img: "./assets/imgGames/Horizon.png"
+        
     },
     {
         emprise: "Rockstar Games",
@@ -21,7 +22,7 @@ const gameList = [
         price: 69.99,
         type: "game", 
         console: "Multiplataforma",
-        img: "🎯"
+        img: "./assets/imgGames/GTA.png"
     },
     {
         emprise: "FromSoftware",
@@ -29,7 +30,7 @@ const gameList = [
         price: 129.99,
         type: "game",
         console: "Multiplataforma",
-        img: "🎯"
+        img: "./assets/imgGames/StarWarsJedi.png"
     },
     {
         emprise: "FromSoftware",
@@ -37,7 +38,7 @@ const gameList = [
         price: 224.99,
         type: "game",
         console: "Multiplataforma",
-        img: "🎯"
+        img: "./assets/imgGames/EldenRing.jpg"
     },
     {
         emprise: "Nintendo",
@@ -45,7 +46,7 @@ const gameList = [
         price: 109.00,
         type: "game",
         console: "Nintendo Switch",
-        img: "🎯"
+        img: "./assets/imgGames/LegendOfZelda.png"
     },
     {
         emprise: "Nintendo",
@@ -53,6 +54,6 @@ const gameList = [
         price: 239.00,
         type: "game",
         console: "Nintendo Switch",
-        img: "🎯"
+        img: "./assets/imgGames/MarioKart.webp"
     }
 ];

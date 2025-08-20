@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="product-grid">
                         ${gameList.map(games => `
                             <div class="product-card">
-                                <div class="product-image">${games.img}</div>
+                                <div class="product-image" style="background-image: url('${games.img}')"></div>
                                 <div class="product-info">
                                     <h3 class="product-name">${games.name}</h3>
                                     <div class="product-price">R$ ${games.price.toFixed(2)}</div>

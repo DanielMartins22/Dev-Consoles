@@ -224,7 +224,6 @@ span {
 /* =========================
    CATEGORIAS
 ========================= */
-
 .categories {
     background: var(--bg-secondary);
     padding: 64px 0;
@@ -245,7 +244,6 @@ span {
     text-align: center;
     font-size: 40px;
     margin-bottom: 48px;
-
 }
 
 .category-card {
@@ -264,10 +262,17 @@ span {
     transform: translateY(-5px);
 }
 
-
 .category-card h3 {
     color: var(--accent-blue);
     margin-bottom: 16px;
+}
+
+#consoles p {
+    margin-left: 10px;
+}
+
+#jogos h3, p {
+    margin-right: 15px;
 }
 
 .category-card p {
@@ -276,7 +281,7 @@ span {
 
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(2, 350px); /* ← 2 colunas de 350px cada */
+    grid-template-columns: repeat(2, 350px);
     gap: 32px;
     justify-content: center;
 }
@@ -308,6 +313,9 @@ span {
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -320,26 +328,34 @@ span {
     color: var(--text-muted);
     height: 200px;
     width: 100%;
-    background-size: contain; /* ← Muda de 'cover' para 'contain' */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--bg-card); /* Cor de fundo para espaços vazios */
+    background-color: var(--bg-card);
     border-radius: 8px 8px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .product-info {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .product-name {
     color: var(--text-primary);
     font-size: 19.2px;
     margin-bottom: 8px;
-
+    min-height: 2.4em;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .product-price {
@@ -358,8 +374,8 @@ span {
     cursor: pointer;
     font-weight: bold;
     border-radius: 5px;
-    transition: all 0.3s ;
-
+    transition: all 0.3s;
+    margin-top: auto;
 }
 
 .product-btn:hover {
@@ -398,7 +414,6 @@ footer {
     margin-bottom: 32px;
 }
 
-
 .footer-links a {
     color: var(--text-secondary);
     text-decoration: none;
@@ -424,24 +439,302 @@ footer a:hover {
 }
 
 /* =========================
-   RESPONSIVIDADE
+   RESPONSIVIDADE MELHORADA
 ========================= */
+
+/* Tablets e telas médias (até 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+    
+    .header-content {
+        padding: 0 24px;
+    }
+    
+    nav ul {
+        gap: 32px;
+        margin-right: 0;
+    }
+    
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .hero h1 {
+        font-size: 42px;
+    }
+    
+    .hero p {
+        font-size: 22px;
+    }
+}
+
+/* Tablets pequenos e celulares grandes (até 768px) */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
-        gap: 1rem;
+        gap: 16px;
+        padding: 0 16px;
     }
-
+    
+    .logo span {
+        font-size: 28px;
+    }
+    
     nav ul {
-        gap: 1rem;
+        gap: 24px;
+        margin-right: 0;
+        font-size: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
+    
+    .hero {
+        padding: 80px 0 40px;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 24px 16px;
+    }
+    
     .hero h1 {
-        font-size: 2rem;
+        font-size: 36px;
+        margin-bottom: 12px;
     }
-
+    
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    
+    .btn {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+    
+    .categories,
+    .products {
+        padding: 48px 0;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .category-card {
+        padding: 24px;
+    }
+    
+    .category-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        max-width: 100%;
+    }
+    
+    .product-card {
+        max-width: 350px;
+        width: 100%;
+        justify-self: center;
+    }
+    
+    .product-info {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .product-name {
+        font-size: 18px;
+        min-height: 2.2em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .product-price {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    
     .footer-links {
         flex-direction: column;
-        gap: 1rem;
+        gap: 16px;
+    }
+    
+    .footer-links a {
+        font-size: 16px;
+    }
+    
+    .footer-content p {
+        font-size: 16px;
+    }
+    
+    footer {
+        padding: 32px 0;
+    }
+    
+    .footer-content {
+        padding: 0 16px;
+    }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 12px;
+    }
+    
+    .logo span {
+        font-size: 24px;
+    }
+    
+    nav ul {
+        font-size: 16px;
+        gap: 16px;
+    }
+    
+    .hero-content {
+        padding: 16px 12px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .category-card {
+        padding: 20px 16px;
+    }
+    
+    .category-icon {
+        font-size: 36px;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .product-info {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    .product-name {
+        font-size: 16px;
+        min-height: 2em;
+    }
+    
+    .product-price {
+        font-size: 20px;
+    }
+    
+    .product-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+    
+    #consoles p {
+        margin-left: 0;
+    }
+    
+    #jogos h3, #jogos p {
+        margin-right: 0;
+    }
+    
+    /* Ajustes para evitar overflow horizontal */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* Reduz animações em telas muito pequenas para melhor performance */
+    .category-card:hover,
+    .product-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    li:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Celulares muito pequenos (até 320px) */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .category-card {
+        padding: 16px 12px;
+    }
+    
+    .product-info {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+    nav ul {
+        font-size: 14px;
+        gap: 12px;
+    }
+    
+    .logo span {
+        font-size: 20px;
     }
 }
