@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const list = document.querySelector('.products');
     const cardConsoles = document.querySelector('#consoles');
     const cardGames = document.querySelector('#jogos');
+    const btnHome = document.querySelector('#liHome')
+    const homePage = document.querySelector('#home')
+
+
 
     if (btn && productsSection) {
         btn.addEventListener('click', function (event) {
@@ -20,6 +24,22 @@ document.addEventListener('DOMContentLoaded', function () {
             productsSection: !!productsSection
         });
     }
+
+    if(btnHome && homePage ) {
+        btnHome.addEventListener('click', function(event) {
+            event.preventDefault();
+            homePage.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+            console.log('Scroll ativado');
+        })
+    }else{
+            console.log('Elemento Não encontrado', {
+                btnHome: !!btnHome,
+                homePage: !!homePage
+            });
+        }
 
     if (cardConsoles) {
         cardConsoles.onclick = function () {
