@@ -301,7 +301,6 @@ span {
   to { opacity: 1; transform: translateY(0); }
 }
 
-
 /* =========================
    PRODUTOS
 ========================= */
@@ -395,19 +394,19 @@ span {
 }
 
 /* =========================
-   CARROSSEL
+   CARROSSEL CORRIGIDO
 ========================= */
 .carrossel {
     position: relative;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
     background: var(--bg-card);
     border-radius: 15px;
     border: 1px solid var(--border-primary);
     box-shadow: var(--shadow-large);
-    overflow: hidden;
-    padding: 24px;
-    display: none; /* ← MUDANÇA: Inicialmente escondido */
+    overflow: visible;
+    padding: 24px 60px;
+    display: none;
 }
 
 .carrossel-container {
@@ -426,7 +425,7 @@ span {
     display: none;
     opacity: 0;
     transform: translateX(50px) scale(0.9);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     width: 100%;
     text-align: center;
     padding: 32px 24px;
@@ -446,17 +445,29 @@ span {
     height: 3px;
     background: var(--gradient-primary);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .card.active {
     display: block;
     opacity: 1;
     transform: translateX(0) scale(1);
+    animation: slideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .card.active::before {
     opacity: 1;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 .card img {
@@ -497,14 +508,14 @@ span {
     transform: translateY(-50%);
     background: var(--gradient-primary);
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     color: var(--text-primary);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-medium);
     display: flex;
@@ -513,21 +524,21 @@ span {
 }
 
 .prev {
-    left: -25px;
+    left: 15px;
 }
 
 .next {
-    right: -25px;
+    right: 15px;
 }
 
 .prev:hover, .next:hover {
     background: var(--gradient-text);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.15);
     box-shadow: var(--shadow-hover);
 }
 
 .prev:active, .next:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: translateY(-50%) scale(1.05);
 }
 
 /* Indicadores do carrossel */
@@ -759,8 +770,9 @@ footer a:hover {
     }
     
     .carrossel {
-        max-width: 400px;
-        padding: 20px;
+        max-width: 450px;
+        padding: 20px 50px;
+        margin: 0 auto 30px auto;
     }
     
     .card {
@@ -784,17 +796,17 @@ footer a:hover {
     }
     
     .prev, .next {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
     }
     
     .prev {
-        left: -22px;
+        left: 12px;
     }
     
     .next {
-        right: -22px;
+        right: 12px;
     }
     
     .footer-links a {
@@ -904,6 +916,52 @@ footer a:hover {
         margin-right: 0;
     }
     
+    .carrossel {
+        max-width: 350px;
+        padding: 16px 40px;
+        margin: 0 auto 20px auto;
+    }
+    
+    .carrossel-container {
+        min-height: 320px;
+    }
+    
+    .card {
+        padding: 20px 12px;
+    }
+    
+    .card img {
+        width: 200px;
+        height: 140px;
+        padding: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .card .price {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    
+    .prev, .next {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+    
+    .prev {
+        left: 8px;
+    }
+    
+    .next {
+        right: 8px;
+    }
+    
     /* Ajustes para evitar overflow horizontal */
     body {
         overflow-x: hidden;
@@ -946,9 +1004,8 @@ footer a:hover {
     }
     
     .carrossel {
-        max-width: 280px;
-        padding: 12px;
-        margin: 0 auto;
+        max-width: 300px;
+        padding: 12px 35px;
     }
     
     .carrossel-container {
@@ -962,7 +1019,7 @@ footer a:hover {
     .card img {
         width: 160px;
         height: 120px;
-        padding: 8px;
+        padding: 6px;
         margin-bottom: 12px;
     }
     
@@ -978,17 +1035,17 @@ footer a:hover {
     }
     
     .prev, .next {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
     }
     
     .prev {
-        left: -17px;
+        left: 5px;
     }
     
     .next {
-        right: -17px;
+        right: 5px;
     }
     
     nav ul {

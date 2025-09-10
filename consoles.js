@@ -4,7 +4,7 @@ const consoles = [
         name: "PlayStation 5",
         price: 3290.00,
         type: "console",
-        img: "./assets/img/playStation5.png"
+        img: "./assets/img/PlayStation5.png"
     },
     {
         emprise: "Sony",
