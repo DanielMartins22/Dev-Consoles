@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const homePage = document.querySelector('#home');
     const btnConsoles = document.querySelector('#liConsoles');
     const btnGames = document.querySelector('#liGames')
+    const btnSobre = document.querySelector('#liSobre')
+    const btnContact = document.querySelectorAll('.liContact')
     const divCarrosel = document.querySelector('.carrossel-container');
     const carrossel = document.querySelector('.carrossel');
     const prevBtn = document.querySelector('.prev');
@@ -18,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentIndex = 0;
     let currentCards = [];
     let eventosListener = false;
+
+
 
     // Scroll suave para seção de produtos
     if (btn && productsSection) {
@@ -30,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+
 
     // Scroll para topo e recarrega a página
     if (btnHome && homePage) {
@@ -47,6 +53,42 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+
+    if (btnConsoles && productsSection) {
+        btnConsoles.addEventListener('click', function (e) {
+            e.preventDefault();
+            if ('scrollBehavior' in document.documentElement.style) {
+                window.scrollTo({ top: productsSection.offsetTop, left: 0, behavior: 'smooth' });
+
+            } else {
+                window.scrollTo(0, 0);
+            }
+
+            showCarroselConsoles()
+        })
+
+
+
+    }
+
+
+
+    if (btnGames && productsSection) {
+        btnGames.addEventListener('click', function (e) {
+            e.preventDefault();
+            if ('scrollBehavior' in document.documentElement.style) {
+                window.scrollTo({ top: productsSection.offsetTop, left: 0, behavior: 'smooth' });
+
+            } else {
+                window.scrollTo(0, 0);
+            }
+            showCarroselGames()
+        })
+    }
+
+
+
     // Função para mostrar um card específico
     function showCard(index) {
         currentCards.forEach((card, i) => {
@@ -60,6 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 100);
     }
+
+
 
     // Configurar event listeners do carrossel (apenas uma vez)
     function setupCarroselEvents() {
@@ -77,6 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
             eventosListener = true;
         }
     }
+
+
 
     // Função para mostrar o carrossel de consoles
     function showCarroselConsoles() {
@@ -103,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="price">R$ ${console.price.toFixed(2).replace('.', ',')}</div> 
                 <button type="button" class="product-btn" aria-label="Adicionar ${console.name} ao carrinho">Adicionar ao Carrinho</button>
             `;
-            
+
             divCarrosel.appendChild(card);
             currentCards.push(card); // Adiciona ao array de controle
         });
@@ -111,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configura os eventos apenas uma vez
         setupCarroselEvents();
     }
+
+
 
     // Função para mostrar o carrossel de jogos
     function showCarroselGames() {
@@ -137,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="price">R$ ${game.price.toFixed(2).replace('.', ',')}</div>
                 <button type="button" class="product-btn" aria-label="Adicionar ${game.name} ao carrinho">Adicionar ao Carrinho</button>
             `;
-            
+
             divCarrosel.appendChild(card);
             currentCards.push(card); // Adiciona ao array de controle
         });
@@ -145,6 +193,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Configura os eventos apenas uma vez
         setupCarroselEvents();
     }
+
+
+
 
     // Event listeners separados para cada botão
     if (btnConsoles) {
@@ -155,6 +206,70 @@ document.addEventListener('DOMContentLoaded', function () {
         btnGames.addEventListener('click', showCarroselGames);
     }
 
+
+
+    function showSobre() {
+        showAllProducts()
+
+        homePage.innerHTML = `
+        <section class="sobre" id="sobre">
+            <div class="sobre-content">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma loja especializada em consoles e jogos, oferecendo os melhores produtos do universo gamer. Aqui você encontra <strong>PlayStation 4 e 5</strong>, <strong>Xbox One S, Series S e Series X</strong>, além dos clássicos <strong>Nintendo Swicth 1 e 2</strong> — tudo com garantia, qualidade e aquele preço que faz você sorrir.</p>
+                <p>Seja você um jogador casual ou um colecionador apaixonado, temos o que você precisa para elevar sua experiência de jogo. Porque aqui, <em>jogar é mais que passatempo — é estilo de vida</em>.</p>
+            </div>
+        </section>
+    `;
+    }
+
+    if (btnSobre) {
+        btnSobre.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            showSobre();
+            if ('scrollbehavior' in document.documentElement.style) {
+                window.scrollTo({ top: homePage.offsetTop, left: 0, behavior: 'smooth' })
+            } else {
+                window.scrollTo(0, 0)
+            }
+
+        })
+    }
+
+
+
+    // Função para mostrar a seção de contato
+
+    function showContact() {         
+    homePage.innerHTML = `                  
+        <section class="contact" id="contact">                          
+            <div class="sobre-content">                                  
+                <h2>Contato</h2>                                  
+                <p>Tem alguma <strong>dúvida</strong>, sugestão ou quer simplesmente dizer um oi? <strong>Adoraríamos ouvir você!</strong> Entre em contato conosco através do e-mail <a href="mailto:example@gmail.com">example@gmail.com</a>.</p>                                  
+                <p>Estamos aqui para ajudar você a encontrar o console ou jogo perfeito. Vamos conversar!</p>                          
+            </div>                  
+        </section>               
+    `     
+}
+
+
+    // Adiciona event listener a todos os botões de contato
+
+    btnContact.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showContact();
+        if('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({top: homePage.offsetTop, left: 0, behavior: 'smooth'})
+        } else {
+            window.scrollTo(0, 0)
+        }
+    });
+});
+
+
+
+
     // Função para mostrar todos os produtos
     function showAllProducts() {
         carrossel.style.display = 'none';
@@ -164,17 +279,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    
+
     // Exibe produtos por categoria
     categoryCards.forEach(card => {
         card.addEventListener('click', function () {
             showAllProducts();
-            
+
             // Animação fade-in corrigida
             list.classList.remove('fade-in');
             list.offsetHeight; // força reflow
             list.classList.add('fade-in');
             setTimeout(() => list.classList.remove('fade-in'), 400);
-            
+
             list.innerHTML = '';
 
             if (card.id === 'consoles') {

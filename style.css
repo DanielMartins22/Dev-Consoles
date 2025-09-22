@@ -181,6 +181,298 @@ a:hover {
     color: var(--accent-blue);
 }
 
+
+/* =========================
+   SEÇÃO SOBRE
+========================= */
+.sobre {
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de partículas de fundo (opcional) */
+.sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.sobre-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 64px 80px;
+    background: rgba(33, 38, 45, 0.9);
+    border-radius: 20px;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-large);
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+/* Borda animada superior */
+.sobre-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 20px 20px 0 0;
+    animation: pulse-border 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-border {
+    0% { opacity: 0.7; transform: scaleX(1); }
+    100% { opacity: 1; transform: scaleX(1.02); }
+}
+
+.sobre-content h2 {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 56px;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    animation: glow-text 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow-text {
+    0% { filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.3)); }
+    100% { filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6)); }
+}
+
+.sobre-content p {
+    color: var(--text-primary);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    text-align: justify;
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.sobre-content p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    position: relative;
+    padding: 32px 0;
+}
+
+/* Destaque para palavras importantes */
+.sobre-content strong {
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.sobre-content em {
+    color: var(--accent-pink);
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 0, 128, 0.4);
+}
+
+/* Efeito hover nos destaques */
+.sobre-content strong:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* Animação de entrada */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Decoração lateral */
+.sobre-content::after {
+    content: '🎮';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 60px;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+}
+
+
+/* =========================
+   SEÇÃO CONTATO (usa mesma base do SOBRE)
+========================= */
+.contact {
+    background: var(--gradient-hero);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de partículas de fundo (igual ao sobre) */
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Container do contato (mesma estrutura do sobre-content) */
+.contact .sobre-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 64px 80px;
+    background: rgba(33, 38, 45, 0.9);
+    border-radius: 20px;
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-large);
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+/* Borda animada superior */
+.contact .sobre-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 20px 20px 0 0;
+    animation: pulse-border 2s ease-in-out infinite alternate;
+}
+
+.contact .sobre-content h2 {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 56px;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+    animation: glow-text 3s ease-in-out infinite alternate;
+}
+
+.contact .sobre-content p {
+    color: var(--text-primary);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+    text-align: justify;
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.contact .sobre-content p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    position: relative;
+    padding: 32px 0;
+}
+
+/* Links de email destacados */
+.contact .sobre-content a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact .sobre-content a:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);
+}
+
+.contact .sobre-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.contact .sobre-content a:hover::after {
+    width: 100%;
+}
+
+/* Destaque para palavras importantes (igual ao sobre) */
+.contact .sobre-content strong {
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.contact .sobre-content strong:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* Ícone decorativo específico para contato */
+.contact .sobre-content::after {
+    content: '📧';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 60px;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+
 /* =========================
    LOGO E SPAN GENÉRICO
 ========================= */
@@ -663,6 +955,46 @@ footer a:hover {
     .hero p {
         font-size: 22px;
     }
+
+    .sobre-content {
+        max-width: 900px;
+        padding: 56px 64px;
+    }
+    
+    .sobre-content h2 {
+        font-size: 48px;
+        margin-bottom: 36px;
+    }
+    
+    .sobre-content p {
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+    
+    .sobre-content::after {
+        right: -50px;
+        font-size: 50px;
+    }
+
+    .contact .sobre-content {
+        max-width: 900px;
+        padding: 56px 64px;
+    }
+    
+    .contact .sobre-content h2 {
+        font-size: 48px;
+        margin-bottom: 36px;
+    }
+    
+    .contact .sobre-content p {
+        font-size: 22px;
+        margin-bottom: 28px;
+    }
+    
+    .contact .sobre-content::after {
+        right: -50px;
+        font-size: 50px;
+    }
 }
 
 /* Tablets pequenos e celulares grandes (até 768px) */
@@ -824,6 +1156,60 @@ footer a:hover {
     .footer-content {
         padding: 0 16px;
     }
+
+    .sobre {
+        padding: 100px 16px 60px;
+        min-height: calc(100vh - 80px);
+    }
+    
+    .sobre-content {
+        max-width: 100%;
+        padding: 40px 32px;
+        border-radius: 15px;
+    }
+    
+    .sobre-content h2 {
+        font-size: 40px;
+        margin-bottom: 32px;
+    }
+    
+    .sobre-content p {
+        font-size: 20px;
+        line-height: 1.7;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+    
+    .sobre-content::after {
+        display: none;
+    }
+
+    .contact {
+        padding: 100px 16px 60px;
+        min-height: calc(100vh - 80px);
+    }
+    
+    .contact .sobre-content {
+        max-width: 100%;
+        padding: 40px 32px;
+        border-radius: 15px;
+    }
+    
+    .contact .sobre-content h2 {
+        font-size: 40px;
+        margin-bottom: 32px;
+    }
+    
+    .contact .sobre-content p {
+        font-size: 20px;
+        line-height: 1.7;
+        text-align: left;
+        margin-bottom: 24px;
+    }
+    
+    .contact .sobre-content::after {
+        display: none;
+    }
 }
 
 /* Celulares pequenos (até 480px) */
@@ -976,6 +1362,56 @@ footer a:hover {
     li:hover {
         transform: scale(1.05);
     }
+
+    .sobre {
+        padding: 90px 12px 50px;
+    }
+    
+    .sobre-content {
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+    
+    .sobre-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .sobre-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .sobre-content p:last-child {
+        padding: 20px 0;
+    }
+
+    .contact {
+        padding: 90px 12px 50px;
+    }
+    
+    .contact .sobre-content {
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+    
+    .contact .sobre-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+    
+    .contact .sobre-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .contact .sobre-content p:last-child {
+        padding: 20px 0;
+    }
 }
 
 /* Celulares muito pequenos (até 320px) */
@@ -1055,5 +1491,41 @@ footer a:hover {
     
     .logo span {
         font-size: 20px;
+    }
+
+    .sobre {
+        padding: 80px 8px 40px;
+    }
+    
+    .sobre-content {
+        padding: 20px 16px;
+    }
+    
+    .sobre-content h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .sobre-content p {
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .contact {
+        padding: 80px 8px 40px;
+    }
+    
+    .contact .sobre-content {
+        padding: 20px 16px;
+    }
+    
+    .contact .sobre-content h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    
+    .contact .sobre-content p {
+        font-size: 15px;
+        margin-bottom: 14px;
     }
 }
