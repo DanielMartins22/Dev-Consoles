@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GameZone - Sua loja completa de consoles e jogos">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>GameZone | Consoles e Jogos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+<header>
         <div class="header-content">
             <div class="logo"> 
-                <span><span class="logo-icon">🎮</span>GameZone</span>
+                <span class="logo-icon">🎮</span>
+                <span>GameZone</span>
             </div>
 
             <nav>
@@ -29,20 +27,26 @@
                     <li class="liContact">Contato</li>
                 </ul>
             </nav>
+
+            <div class="auth-buttons">
+                <button type="button" class="btn-auth btn-login">Entrar</button>
+                <button type="button" class="btn-auth btn-signup">Criar Conta</button>
+            </div>
         </div>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
-
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Sua Nova Aventura Começa Aqui</h1>
-                <p>Descubra os melhores consoles e jogos com preços incríveis. Sua próxima experiência gaming está a um
-                    clique de distância!</p>
+                <p>Descubra os melhores consoles e jogos com preços incríveis. Sua próxima experiência gaming está a um clique de distância!</p>
                 <button type="button" class="btn">Explorar Produtos</button>
             </div>
         </section>
 
+        <!-- CATEGORIES SECTION -->
         <section class="categories" id="categorias">
             <div class="container">
                 <h2 class="section-title">Categorias</h2>
@@ -62,98 +66,27 @@
             </div>
         </section>
 
+        <!-- PRODUCTS SECTION -->
         <section class="products" id="produtos">
             <div class="container">
                 <h2 class="section-title">Produtos em Destaque</h2>
                 
-                <!-- ✅ CARROSSEL MOVIDO PARA FORA DO GRID -->
+                <!-- CARROSSEL -->
                 <div class="carrossel">
                     <button class="prev">◀</button>
                     <div class="carrossel-container"></div>
                     <button type="button" class="next">▶</button>
                 </div>
 
-                <!-- ✅ GRID DE PRODUTOS SEPARADO -->
+                <!-- GRID DE PRODUTOS -->
                 <div class="product-grid">
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/img/PlayStation5.png')" role="img"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">PlayStation 5</h3>
-                            <div class="product-price">R$ 3.290,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/imgGames/EA-FC25.webp');">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">EA Sports FC 25</h3>
-                            <div class="product-price">R$ 299,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/img/PlayStation4.png')"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">PlayStation 4</h3>
-                            <div class="product-price">R$ 2.200,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/imgGames/Horizon.png')">
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Horizon Zero Dawn</h3>
-                            <div class="product-price">R$ 75,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/img/XboxOneS.png')"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">Xbox One S</h3>
-                            <div class="product-price">R$ 1.300,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/imgGames/GTA.png');"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">GTA V</h3>
-                            <div class="product-price">R$ 69,99</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image" style="background-image: url('./assets/img/XboxSeriesS.png')"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">Xbox Series S</h3>
-                            <div class="product-price">R$ 2.449,00</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <div class="product-image"
-                            style="background-image: url('./assets/imgGames/StarWarsJedi.png');"></div>
-                        <div class="product-info">
-                            <h3 class="product-name">Star Wars Jedi</h3>
-                            <div class="product-price">R$ 129,99</div>
-                            <button type="button" class="product-btn">Adicionar ao Carrinho</button>
-                        </div>
-                    </div>
+                    <!-- Os produtos serão carregados dinamicamente pelo JavaScript -->
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -162,8 +95,8 @@
                 <a href="#suporte">Suporte</a>
                 <a href="#contato" class="liContact">Contato</a>
             </div>
-            <p>&copy; 2025 GameZone. Projeto de site. </p>
-            <p>Desenvolvido por <a href="https://github.com/DanielMartins22">Daniel Martins</a></p>
+            <p>&copy; 2025 GameZone. Projeto de site.</p>
+            <p>Desenvolvido por <a href="https://github.com/DanielMartins22" target="_blank" rel="noopener noreferrer">Daniel Martins</a></p>
         </div>
     </footer>
 
