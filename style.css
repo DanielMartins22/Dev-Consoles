@@ -127,7 +127,7 @@
      grid-template-columns: auto 1fr auto;
      align-items: center;
      padding: 0 32px;
-     max-width: 1400px;
+     max-width: 1600px;
      margin: 0 auto;
      gap: 32px;
  }
@@ -165,7 +165,7 @@
      list-style: none;
      gap: 32px;
      font-weight: 500;
-     font-size: 18px;
+     font-size: 22px;
      margin: 0;
      padding: 0;
  }
@@ -866,7 +866,7 @@
 
      nav ul {
          gap: 20px;
-         font-size: 16px;
+         font-size: 18px;
          flex-wrap: wrap;
          justify-content: center;
      }
@@ -974,7 +974,7 @@
 
      nav ul {
          gap: 16px;
-         font-size: 14px;
+         font-size: 16px;
      }
 
      nav li {
