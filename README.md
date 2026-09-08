@@ -50,6 +50,8 @@ Este projeto está sendo aprimorado e a próxima etapa será a implementação d
 
 ---
 
+Link para ver o site: https://danielmartins22.github.io/GameZone/
+
 ## 👤 Desenvolvedor
 **Daniel Martins**  
 📧 Email: [danielmn.contato@hotmail.com](mailto:danielmn.contato@hotmail.com)  
